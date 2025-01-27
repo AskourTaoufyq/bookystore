@@ -6,11 +6,11 @@ const bookschema = mongoose.Schema(
       type: String,
       required: true,
     },
-    author: {
+    rating: {
       type: String,
       required: true,
     },
-    publishYear: {
+    price: {
       type: Number,
       required: true,
     },
