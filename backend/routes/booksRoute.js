@@ -8,15 +8,15 @@ router.post('/', async (request, response) => {
   try {
     if (
       !request.body.title ||
-      !request.body.author ||
+      !request.body.rating ||
       !request.body.price
     ) {return response.status(400).send({
-      message: 'Please send all requiresd fields: title, author, price',
+      message: 'Please send all requiresd fields: title, rating, price',
     });
   }
   const newbook = {
     title: request.body.title,
-    author: request.body.author,
+    author: request.body.rating,
     price: request.body.price,
   };
   const book = await Book.create(newbook);
@@ -59,10 +59,10 @@ router.put('/:id', async (request, response) => {
   try {
     if (
       !request.body.title ||
-      !request.body.author ||
+      !request.body.rating ||
       !request.body.price 
     ) {
-      return response.status(400).send({ message: "Please fill all fields: title, author, price"});
+      return response.status(400).send({ message: "Please fill all fields: title, rating, price"});
     }
 
     const { id } = request.params;
