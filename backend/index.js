@@ -26,7 +26,7 @@ app.use(
 
 app.get('/', (request, response) => {
   console.log(request);
-  return response.status(234).send('Welcome To your Book store');
+  return response.status(234).send('Welcome To your Booky store');
 });
 
 app.use('/books', booksRoute);
@@ -47,8 +47,8 @@ mongoose
   app.post('/books', async (request, response) => {
     try {
       if (!request.body.title ||
-       !request.body.author ||
-       !request.body.publish
+       !request.body.rating ||
+       !request.body.price
       ) {
         return response.status(400).send({message:'Please fill all fields'});
       }
